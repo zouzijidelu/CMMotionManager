@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CMMotionManager" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="陀螺仪数据" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wFy-hz-pvN">
+                                <rect key="frame" x="0.0" y="143" width="393" height="186"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="186" id="ohf-rX-5dC"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R7B-Zx-l7A">
+                                <rect key="frame" x="132.66666666666666" y="625" width="127.99999999999997" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="2rz-ZG-ILo"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="39" id="FUM-po-p7j"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="127.99999999999997" id="Vus-FY-Vao"/>
+                                    <constraint firstAttribute="height" constant="39" id="mub-HV-jx2"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="开始获取数据"/>
+                                <connections>
+                                    <action selector="getGyroData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cGR-ib-Z76"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="61u-my-3gB">
+                                <rect key="frame" x="132.66666666666666" y="712" width="127.99999999999997" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="OK2-do-NKo"/>
+                                    <constraint firstAttribute="width" constant="128" id="dDa-fg-prn"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="停止获取数据"/>
+                                <connections>
+                                    <action selector="stop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mpf-X6-DeT"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="时间：0秒" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="26C-Cr-UQq">
+                                <rect key="frame" x="0.0" y="437" width="393" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="iQ4-OI-C8c"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ybg-mb-253">
+                                <rect key="frame" x="0.0" y="763" width="393" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="KzU-qg-mRL"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="重置文件"/>
+                                <connections>
+                                    <action selector="removeFile:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mBh-BZ-oLQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wFy-hz-pvN" secondAttribute="trailing" id="6ce-lh-hPC"/>
+                            <constraint firstItem="61u-my-3gB" firstAttribute="centerX" secondItem="R7B-Zx-l7A" secondAttribute="centerX" id="9eS-27-R0P"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ybg-mb-253" secondAttribute="bottom" constant="20" id="BGO-mZ-FLb"/>
+                            <constraint firstItem="R7B-Zx-l7A" firstAttribute="top" secondItem="wFy-hz-pvN" secondAttribute="bottom" constant="296" id="GmS-tG-D5v"/>
+                            <constraint firstItem="R7B-Zx-l7A" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SIV-Qd-3YJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ybg-mb-253" secondAttribute="trailing" id="XTB-e3-tXG"/>
+                            <constraint firstItem="wFy-hz-pvN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cYQ-oH-fYF"/>
+                            <constraint firstItem="Ybg-mb-253" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cf1-p1-DE1"/>
+                            <constraint firstItem="26C-Cr-UQq" firstAttribute="top" secondItem="wFy-hz-pvN" secondAttribute="bottom" constant="108" id="kLc-jD-Ziz"/>
+                            <constraint firstItem="wFy-hz-pvN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="84" id="llv-D7-4cA"/>
+                            <constraint firstItem="26C-Cr-UQq" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="mlZ-6R-977"/>
+                            <constraint firstItem="26C-Cr-UQq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="q8Y-9y-SsB"/>
+                            <constraint firstItem="61u-my-3gB" firstAttribute="top" secondItem="R7B-Zx-l7A" secondAttribute="bottom" constant="48" id="x1Q-Ok-Uia"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="wFy-hz-pvN" id="toJ-it-Psk"/>
+                        <outlet property="timeLabel" destination="26C-Cr-UQq" id="zfk-mb-jZy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="61.832061068702288" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
