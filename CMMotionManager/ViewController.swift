@@ -77,9 +77,9 @@ class ViewController: UIViewController {
             }
             if let acceleration = self?.motionManager.accelerometerData?.acceleration {
                 //获取设备在三个轴方向上的加速度  并在字符串末尾添加回车符
-                text+="accelerometer-x:\(acceleration.x*9.8)\n"
-                text+="accelerometer-y:\(acceleration.y*9.8)\n"
-                text+="accelerometer-z:\(acceleration.z*9.8)"
+                text+="accelerometer-x:\(acceleration.x)\n"
+                text+="accelerometer-y:\(acceleration.y)\n"
+                text+="accelerometer-z:\(acceleration.z)"
                 fileText += "   \(acceleration.x)   \(acceleration.y)   \(acceleration.z)\n"
                 self?.write(str: fileText)
                 self?.textView.text = text
