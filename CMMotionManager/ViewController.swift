@@ -35,7 +35,7 @@ class ViewController: UIViewController {
 //            try? FileManager.default.removeItem(atPath: path)
 //        }
         fileHandle = FileHandle(forWritingAtPath: path)!
-        self.write( str: "#timestamp [ns]    w_RS_S_x [rad s^-1]    w_RS_S_y [rad s^-1]    w_RS_S_z [rad s^-1]    a_RS_S_x [m s^-2]    a_RS_S_y [m s^-2]    a_RS_S_z [m s^-2]\n")
+        //self.write( str: "#timestamp [ns]    w_RS_S_x [rad s^-1]    w_RS_S_y [rad s^-1]    w_RS_S_z [rad s^-1]    a_RS_S_x [m s^-2]    a_RS_S_y [m s^-2]    a_RS_S_z [m s^-2]\n")
     }
      
     //点击获取当前陀螺仪数据
@@ -66,21 +66,21 @@ class ViewController: UIViewController {
         updateTimer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true, block: { [weak self] (timer )in
             if let rotationRate = self?.motionManager.gyroData?.rotationRate {
                 text = "";
-                //fileText = "IMU   \(Date().milliStamp)"
-                fileText = "\(Date().milliStamp)"
-                text += "rotationRate-x: \(rotationRate.x)\n"
+                fileText = "IMU   \(Date().milliStamp)"
+//                fileText = "\(Date().milliStamp)"
+                text += "rotationRate-x: \(rotationRate.x * -1)\n"
                 
                 text += "rotationRate-y: \(rotationRate.y)\n"
                 text += "rotationRate-z: \(rotationRate.z)\n"
-                fileText += "   \(rotationRate.x)   \(rotationRate.y)   \(rotationRate.z)"
+                fileText += "   \(rotationRate.x * -1)   \(rotationRate.y)   \(rotationRate.z)"
                 //self.textView.text = text
             }
             if let acceleration = self?.motionManager.accelerometerData?.acceleration {
                 //获取设备在三个轴方向上的加速度  并在字符串末尾添加回车符
-                text+="accelerometer-x:\(acceleration.x*9.8)\n"
+                text+="accelerometer-x:\(acceleration.x*9.8 * -1)\n"
                 text+="accelerometer-y:\(acceleration.y*9.8)\n"
                 text+="accelerometer-z:\(acceleration.z*9.8)"
-                fileText += "   \(acceleration.x)   \(acceleration.y)   \(acceleration.z)\n"
+                fileText += "   \(acceleration.x*9.8 * -1)   \(acceleration.y*9.8)   \(acceleration.z*9.8)\n"
                 self?.write(str: fileText)
                 self?.textView.text = text
             }
