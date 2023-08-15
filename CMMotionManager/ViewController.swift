@@ -69,7 +69,6 @@ class ViewController: UIViewController {
                 //fileText = "IMU   \(Date().milliStamp)"
                 fileText = "\(Date().milliStamp)"
                 text += "rotationRate-x: \(rotationRate.x)\n"
-                
                 text += "rotationRate-y: \(rotationRate.y)\n"
                 text += "rotationRate-z: \(rotationRate.z)\n"
                 fileText += "   \(rotationRate.x)   \(rotationRate.y)   \(rotationRate.z)"
@@ -106,6 +105,7 @@ class ViewController: UIViewController {
         self.motionManager.stopAccelerometerUpdates()
         let time = Int(Date().timeIntervalSince1970) - startTime
         self.timeLabel.text = "时间: \(time) 秒"
+        self.updateTimer?.invalidate()
     }
     
     override func didReceiveMemoryWarning() {
