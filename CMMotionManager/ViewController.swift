@@ -106,6 +106,7 @@ class ViewController: UIViewController {
         self.motionManager.stopAccelerometerUpdates()
         let time = Int(Date().timeIntervalSince1970) - startTime
         self.timeLabel.text = "时间: \(time) 秒"
+        self.updateTimer?.invalidate()
     }
     
     override func didReceiveMemoryWarning() {
