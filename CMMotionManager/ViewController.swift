@@ -80,7 +80,7 @@ class ViewController: UIViewController {
                 text+="accelerometer-x:\(acceleration.x*9.8 * -1)\n"
                 text+="accelerometer-y:\(acceleration.y*9.8)\n"
                 text+="accelerometer-z:\(acceleration.z*9.8)"
-                fileText += "   \(acceleration.x*9.8 * -1)   \(acceleration.y*9.8)   \(acceleration.z*9.8)\n"
+                fileText += "   \(acceleration.x*9.8 * -1)   \(acceleration.y*9.8)   \(acceleration.z*9.8 * -1)\n"
                 self?.write(str: fileText)
                 self?.textView.text = text
             }
